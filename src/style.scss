@@ -1,0 +1,310 @@
+:root {
+
+  --clrDarkGray: #2b2b2b;
+  --clrGray: #969696;
+  --clrWhite: #ffffff;
+  --primaryFont: "Rubik";
+
+
+
+  font-family: var(--primaryFont), Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--primaryFont), Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1;
+
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 18px;
+}
+
+input {
+  min-width: 0;
+}
+
+
+
+
+
+
+
+
+// HEADer Section
+header {
+
+  @media (max-width: 768px) {
+    row-gap: 1rem;
+    padding-block-start: 1.4rem;
+  }
+
+  background: url(/images/pattern-bg-desktop.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: var(--clrWhite);
+  text-align: center;
+  row-gap: 0.5rem;
+  padding-block-start: 2rem;
+
+
+  position: sticky;
+  inset: 0 0 auto auto;
+  z-index: 10;
+  
+
+
+  h1 {
+    font-size: clamp(1.4rem, 1.4rem + 1vw, 1.7rem);
+  }
+
+
+
+
+  form {
+    --br: .8vmax;
+    max-width: 600px;
+    margin: 0 auto;
+    width: min(600px, calc(100% - 2rem));
+    width: min(500px, 100%);
+
+    display: flex;
+    gap: 0;
+    flex-direction: row;
+    align-items: stretch;
+    // height: 1rem;
+
+
+
+    * {
+      outline: none;
+      border: none;
+    }
+  }
+  
+  
+  
+  
+  input {
+    font-size: clamp(1rem, 1rem + 1vw, 1.1rem);
+    flex-grow: 1;
+    padding-block: 0.86rem;
+    padding-inline: 1rem;
+
+    border-start-start-radius: var(--br);
+    border-end-start-radius: var(--br);
+
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+
+
+  button {
+    background: #000;
+    padding-inline: 1.4rem;
+    border-start-end-radius: var(--br);
+    border-end-end-radius: var(--br);
+    display: flex;
+    place-items: center;
+    place-content: center;
+    cursor: pointer;
+  }
+
+
+
+  section {
+    background: var(--clrWhite);
+    color: #000;
+    
+    border-radius: 1vmax;
+    box-shadow: 0 0 7px -2px rgb(0 0 0 / 0.3);
+    margin-top: -11rem;
+
+    
+    padding: 2rem 0.5rem;
+    
+    display: grid;
+    gap: 2rem;
+
+    transform: translateY(50%);
+    
+
+    z-index: 2;
+    
+    
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      margin-top: -5rem;
+      text-align: left;
+      padding-inline: 2rem;
+
+
+      article + article {
+        border-left: 1px solid var(--clrGray);
+        padding-inline: 1.2rem;
+        filter: blur(0.2);
+      }
+    }
+    
+  }
+  
+  
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    word-wrap: break-word;
+    // text-align: center;
+
+    @media (max-width:768px) {
+      gap: 0.4rem;
+    }
+
+
+
+  }
+
+
+
+  strong {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--clrGray);
+    letter-spacing: 2px;
+  }
+
+  span {
+    font-size: clamp(1.2rem, 1.2rem + 1vmax, 1.4rem);
+    font-weight: 600;
+    color: var(--clrDarkGray);
+    line-height: 1.2;
+  }
+
+
+
+
+  row-gap: 2rem;
+
+
+}
+
+
+main {
+  flex-grow: grow;
+  object-fit: cover;
+  object-position: top left;
+  background: #eef;
+  height: calc(100vh - 16.56rem);
+  z-index: 0;
+  
+  @media (min-width: 768px) {
+    height: calc(100vh - 12.9rem);
+    
+  }
+}
+
+
+
+
+
+
+
+
+figure {
+  position: fixed;
+  inset: auto auto 0 auto;
+  background: var(--clrDarkGray);
+  color: var(--clrWhite);
+  width: clamp(150px, 350px, 90vw);
+  z-index: 100;
+  padding: 0.3rem 0.7rem;
+  word-wrap: break-word;
+  line-height: 1.4;
+
+  transform: translateX(-100%) rotate(10deg);
+  transform-origin: top left;
+  transition: transform 0.5s ease; 
+  
+  &.active {
+    transform: translateX(0%) rotate(0);
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sg {
+
+  --col-count: 6;
+
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) repeat(var(--col-count), minmax(0, 11rem)) minmax(1rem, 1fr);
+  & > * {
+    grid-column: 2 / -2;
+  }
+  
+  @media (min-width: 768px) {
+
+  }
+
+
+
+
+
+
+
+}

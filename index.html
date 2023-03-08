@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <header class="sg">
+      <h1>IP Adress Tracker</h1>
+      <form>
+        <input type="search" placeholder="Search for any IP adress or domain" title="Search for any IP adress or domain">
+        <button title="search!">
+          <img src="/images/icon-arrow.svg" alt="arrow">
+        </button>
+      </form>
+      <section>
+        <article data-ip>
+          <strong>IP ADDRESS</strong>
+          <span>192.212.174.101</span>
+        </article>
+
+        <article data-location>
+          <strong>LOCATION</strong>
+          <span>Brooklyn, NY 10001</span>
+        </article>
+
+
+        <article data-timezone>
+          <strong>TIMEZONE</strong>
+          <span>UTC -05:00</span>
+        </article>
+
+
+
+        <article data-isp>
+          <strong>ISP</strong>
+          <span>SpaceX Starlink</span>
+        </article>
+
+      </section>
+    </header>
+
+
+    <figure>
+      <p>Loading your ipAdress</p>
+    </figure>
+
+
+    <main id="map"></main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
